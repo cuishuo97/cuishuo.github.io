@@ -13,11 +13,11 @@
 
     <title>
         
-          CuiShuo&#39;s Blog
+          Hello World - CuiShuo&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://www.cuishuo.net/">
+    <link rel="canonical" href="http://www.cuishuo.net/2017/08/04/Hello-World/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -147,69 +147,72 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://www.cuishuo.net/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>CuiShuo&#39;s Blog</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">One day we will reach there.</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>Hello World</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Cui Shuo on
+                        2017-08-04
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-<!-- NO SIDEBAR -->
     <!-- Post Container -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
-                <!-- Main Content -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>Hello World!</p>
+<p>This is a blog.</p>
+<p>Founded in Aug 4, 2017</p>
 
 
-<div class="post-preview">
+                <hr>
 
-    <a href="/2017/08/04/Hello-World/">
-        <h2 class="post-title">
-            Hello World
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            Hello World!
-This is a blog.
-Founded in Aug 4, 2017
-...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Cui Shuo on
-        2017-08-04
-    </p>
+                
 
-</div>
-<hr>
+                <ul class="pager">
+                    
+                    
+                </ul>
 
+                
 
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
+                
 
             </div>
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
@@ -221,11 +224,10 @@ Founded in Aug 4, 2017
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        
+                       
                     </div>
                 </section>
                 
-
 
                 <!-- Friends Blog -->
                 
@@ -234,14 +236,56 @@ Founded in Aug 4, 2017
                 <ul class="list-inline">
 
                     
-                        <li><a href="http://zzhi.me">ifamec</a></li>
+                        <li><a href="http://zzhi.me" target="_blank">ifamec</a></li>
                     
                 </ul>
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->
