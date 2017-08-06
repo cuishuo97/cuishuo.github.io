@@ -13,11 +13,11 @@
 
     <title>
         
-          About - CuiShuo&#39;s Blog
+          Installation and Configuration of oh-my-zsh on macOS - CuiShuo&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://www.cuishuo.net/about/">
+    <link rel="canonical" href="http://www.cuishuo.net/2017/08/06/Installation-and-Configuration-of-oh-my-zsh-on-macOS/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -147,39 +147,111 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/404-bg.jpg')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://www.cuishuo.net/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>About</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">Hey, this is CuiShuo.</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#macOS" title="macOS">macOS</a>
+                        
+                    </div>
+                    <h1>Installation and Configuration of oh-my-zsh on macOS</h1>
+                    <h2 class="subheading">The best terminal tool on macOS</h2>
+                    <span class="meta">
+                        Posted by Cui Shuo on
+                        2017-08-06
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-<!-- NO SIDEBAR -->
     <!-- Post Container -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
-                <ul>
-<li>CS学CS专业的「<strong>程序员</strong>」。</li>
-<li>学习使我快乐，但考试让我失去快感，说白了就是典型的「<strong>努力型学渣</strong>」。</li>
-<li>和喜欢的人一起，多学习，多创造，多体验。为了下一次的「<strong>离开</strong>」而努力。</li>
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>我在知乎闲逛的时候，一次偶然的机会，看到了各种DIY的终端页面，「自动补全」「语法高亮」等强大功能让我眼前一亮。由于</p>
+<p><strong>最终DIY效果图：</strong><br><img src="/2017/08/06/Installation-and-Configuration-of-oh-my-zsh-on-macOS/pic-oh-my-zsh01.jpg" alt=""></p>
+<h3 id="1-安装iTerm2"><a href="#1-安装iTerm2" class="headerlink" title="1.安装iTerm2"></a>1.安装iTerm2</h3><blockquote>
+<p>为什么不使用macOS自带的Terminal?</p>
+</blockquote>
+<ul>
+<li><p>官方解释:</p>
+<p>iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS 10.8 or newer. iTerm2 brings the terminal into the modern age with features you never knew you always wanted.</p>
+</li>
 </ul>
-<p>To be continued…</p>
+<blockquote>
+<p>如何安装iTerm2?</p>
+</blockquote>
+<ul>
+<li>访问<a href="http://www.iterm2.com" target="_blank" rel="external">iTerm2官方网站</a>并下载最新版本</li>
+<li>把下载好的文件放到Application文件夹中</li>
+</ul>
+<h3 id="2-配置iTerm2"><a href="#2-配置iTerm2" class="headerlink" title="2.配置iTerm2"></a>2.配置iTerm2</h3><ul>
+<li><p><strong>安装oh-my-zsh</strong></p>
+<p>在iTerm2中输入以下代码</p>
+<p><code>curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh</code></p>
+</li>
+<li><p><strong>安装Powerline</strong></p>
+<p>首先确定你的Terminal能够正常执行pip命令，在iTerm2中执行以下代码</p>
+<p><code>pip install powerline-status --user</code> </p>
+<p>如果不能正常执行，则先安装pip命令</p>
+<p><code>sudo easy_install pip</code></p>
+</li>
+<li><p><strong>安装字体库</strong></p>
+<ul>
+<li>访问<a href="https://github.com/powerline/fonts" target="_blank" rel="external">https://github.com/powerline/fonts</a>将工程下载，并使用iTerm2 cd 到<code>install.sh</code>文件所在的目录</li>
+<li>执行<code>./install.sh</code>指令安装Powerline字体</li>
+<li>提示<code>All Powerline fonts installed to /Users/superdanny/Library/Fonts</code>说明已经安装成功</li>
+</ul>
+</li>
+</ul>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/08/05/Start-of-something-new/" data-toggle="tooltip" data-placement="top" title="Start of something new">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
 
             </div>
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
@@ -191,19 +263,12 @@
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        
-                            
-                            <a href="/tags/#macOS" title="macOS" rel="1">macOS</a>
-                            
-                        
-                            
-                            <a href="/tags/#Life" title="Life" rel="1">Life</a>
-                            
+                       
+                          <a class="tag" href="/tags/#macOS" title="macOS">macOS</a>
                         
                     </div>
                 </section>
                 
-
 
                 <!-- Friends Blog -->
                 
@@ -212,14 +277,56 @@
                 <ul class="list-inline">
 
                     
-                        <li><a href="http://zzhi.me">ifamec</a></li>
+                        <li><a href="http://zzhi.me" target="_blank">ifamec</a></li>
                     
                 </ul>
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->
