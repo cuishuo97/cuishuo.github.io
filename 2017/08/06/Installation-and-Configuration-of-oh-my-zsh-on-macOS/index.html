@@ -169,7 +169,7 @@
                         
                     </div>
                     <h1>Installation and Configuration of oh-my-zsh on macOS</h1>
-                    <h2 class="subheading">The best terminal tool on macOS</h2>
+                    <h2 class="subheading">The best terminal tool on macOS.</h2>
                     <span class="meta">
                         Posted by Cui Shuo on
                         2017-08-06
@@ -191,7 +191,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>我在知乎闲逛的时候，一次偶然的机会，看到了各种DIY的终端页面，「自动补全」「语法高亮」等强大功能让我眼前一亮。由于</p>
+                <p>我在知乎闲逛的时候，一次偶然的机会，看到了各种DIY的终端页面，「自动补全」「语法高亮」等强大功能让我眼前一亮。由于当时国内相关的配置教程不是特别详细，配置自然是以失败告终。最近经过我几天的摸索，终于做出了我满意的效果。</p>
 <p><strong>最终DIY效果图：</strong><br><img src="/2017/08/06/Installation-and-Configuration-of-oh-my-zsh-on-macOS/pic-oh-my-zsh01.jpg" alt=""></p>
 <h3 id="1-安装iTerm2"><a href="#1-安装iTerm2" class="headerlink" title="1.安装iTerm2"></a>1.安装iTerm2</h3><blockquote>
 <p>为什么不使用macOS自带的Terminal?</p>
@@ -221,9 +221,28 @@
 </li>
 <li><p><strong>安装字体库</strong></p>
 <ul>
-<li>访问<a href="https://github.com/powerline/fonts" target="_blank" rel="external">https://github.com/powerline/fonts</a>将工程下载，并使用iTerm2 cd 到<code>install.sh</code>文件所在的目录</li>
+<li>访问<a href="https://github.com/powerline/fonts" target="_blank" rel="external">https://github.com/powerline/fonts</a>将字体库文件下载，并使用iTerm2 cd 到<code>install.sh</code>文件所在的目录</li>
 <li>执行<code>./install.sh</code>指令安装Powerline字体</li>
-<li>提示<code>All Powerline fonts installed to /Users/superdanny/Library/Fonts</code>说明已经安装成功</li>
+<li>提示<code>All Powerline fonts installed to /Users/jolvin/Library/Fonts</code>说明已经安装成功</li>
+</ul>
+</li>
+<li><p><strong>设置iTerm2的Regular Font和Non-ASCII Font</strong></p>
+<p>进入<code>Preferences</code>把设置<code>Profiles</code>中<code>Text</code>选项卡的<code>Font</code>更改为Powerline字体</p>
+<p><strong>字体设置如下图：</strong><br><img src="/2017/08/06/Installation-and-Configuration-of-oh-my-zsh-on-macOS/pic-oh-my-zsh02.jpg" alt=""></p>
+</li>
+<li><p><strong>配色方案</strong></p>
+<ul>
+<li><strong>安装配色方案</strong></li>
+</ul>
+<p>进入刚刚下载好的字体库，在<code>solarized/iterm2-colors-solarized</code>目录下打开<code>Dark.itermcolors</code>和<code>Solarized Light.itermcolors</code>就可以把配置文件导入到iTerm2中</p>
+<ul>
+<li><strong>配置配色方案</strong></li>
+</ul>
+<p>通过<code>Profiles</code>中<code>Colors</code>选项卡的<code>Color Presets</code>设置配色方案</p>
+</li>
+<li><p><strong>使用主题</strong></p>
+<ul>
+<li><strong>下载主题</strong></li>
 </ul>
 </li>
 </ul>
