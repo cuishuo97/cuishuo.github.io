@@ -97,14 +97,14 @@
 
                         
                         <li>
-                            <a href="/archives/">Archives</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
@@ -197,7 +197,7 @@
 <p>为什么不使用macOS自带的Terminal?</p>
 </blockquote>
 <ul>
-<li><p>官方解释:</p>
+<li><p>官方解释：</p>
 <p>iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS 10.8 or newer. iTerm2 brings the terminal into the modern age with features you never knew you always wanted.</p>
 </li>
 </ul>
@@ -211,17 +211,21 @@
 <h3 id="2-配置iTerm2"><a href="#2-配置iTerm2" class="headerlink" title="2.配置iTerm2"></a>2.配置iTerm2</h3><ul>
 <li><p><strong>安装oh-my-zsh</strong></p>
 <p>在iTerm2中输入以下代码</p>
-<p><code>curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh</div></pre></td></tr></table></figure>
 </li>
+</ul>
+<ul>
 <li><p><strong>安装Powerline</strong></p>
-<p>首先确定你的Terminal能够正常执行pip命令，在iTerm2中执行以下代码</p>
-<p><code>pip install powerline-status --user</code> </p>
+<p>首先确定你的Terminal能够正常执行pip命令，在iTerm2中执行代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install powerline-status --user</div></pre></td></tr></table></figure>
 <p>如果不能正常执行，则先安装pip命令</p>
-<p><code>sudo easy_install pip</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo easy_install pip</div></pre></td></tr></table></figure>
 </li>
+</ul>
+<ul>
 <li><p><strong>安装字体库</strong></p>
 <ul>
-<li>访问<a href="https://github.com/powerline/fonts" target="_blank" rel="external">https://github.com/powerline/fonts</a>将字体库文件下载，并使用iTerm2 cd 到<code>install.sh</code>文件所在的目录</li>
+<li>访问<a href="https://github.com/powerline/fonts" target="_blank" rel="external">https://github.com/powerline/fonts</a>将字体库文件下载，并使用iTerm2<code>cd</code>到<code>install.sh</code>文件所在的目录</li>
 <li>执行<code>./install.sh</code>指令安装Powerline字体</li>
 <li>提示<code>All Powerline fonts installed to /Users/jolvin/Library/Fonts</code>说明已经安装成功</li>
 </ul>
@@ -232,21 +236,30 @@
 </li>
 <li><p><strong>配色方案</strong></p>
 <ul>
-<li><strong>安装配色方案</strong></li>
+<li><p><strong>安装配色方案：</strong><br>进入刚刚下载好的字体库，在<code>solarized/iterm2-colors-solarized</code>目录下打开<code>Dark.itermcolors</code>和<code>Solarized Light.itermcolors</code>就可以把配置文件导入到iTerm2中</p>
+</li>
+<li><p><strong>配置配色方案：</strong><br>通过<code>Profiles</code>中<code>Colors</code>选项卡的<code>Color Presets</code>设置配色方案</p>
+</li>
 </ul>
-<p>进入刚刚下载好的字体库，在<code>solarized/iterm2-colors-solarized</code>目录下打开<code>Dark.itermcolors</code>和<code>Solarized Light.itermcolors</code>就可以把配置文件导入到iTerm2中</p>
-<ul>
-<li><strong>配置配色方案</strong></li>
-</ul>
-<p>通过<code>Profiles</code>中<code>Colors</code>选项卡的<code>Color Presets</code>设置配色方案</p>
 </li>
 <li><p><strong>使用主题</strong></p>
 <ul>
-<li><strong>下载主题</strong></li>
-</ul>
+<li><p><strong>安装主题：</strong><br>访问<a href="https://github.com/fcamblor/oh-my-zsh-agnoster-fcamblor" target="_blank" rel="external">https://github.com/fcamblor/oh-my-zsh-agnoster-fcamblor</a>将主题文件下载，进入刚刚的下载文件中，运行install文件</p>
+</li>
+<li><p><strong>配置主题：</strong><br>使用iTerm2打开<code>~/.zshrc</code>文件，然后将<code>ZSH_THEME</code>后面的字段更改为<code>agnoster</code></p>
 </li>
 </ul>
-<p>To be continued.</p>
+</li>
+<li><p><strong>增加语法高亮效果</strong></p>
+<p>使用iTerm2<code>cd</code>到<code>~/.oh-my-zsh/custom/plugins/</code></p>
+<p>执行代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git</div></pre></td></tr></table></figure>
+<p>使用iTerm2打开<code>~/.zshrc</code>文件，在文件结尾加入以下语句<br><code>plugins=(zsh-syntax-highlighting)</code><br><code>source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</code></p>
+<p>最后执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> ~/.zshrc</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>保存文件，这样就同时配置好了iTerm2和oh-my-zsh</p>
 
 
                 <hr>
