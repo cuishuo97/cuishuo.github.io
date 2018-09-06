@@ -13,11 +13,11 @@
 
     <title>
         
-          Keep Moving On in 2018 - CuiShuo&#39;s Blog
+          Installing phpMyAdmin on macOS - CuiShuo&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="https://www.cuishuo.net/2018/02/16/Keep-Moving-On-in-2018/">
+    <link rel="canonical" href="https://www.cuishuo.net/2018/09/06/Installing-phpMyAdmin-on-macOS/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -155,7 +155,7 @@
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        background-image: url('headerpost.jpg')
+        background-image: url('/img/home-bg.jpg')
     }
 </style>
 <header class="intro-header" >
@@ -165,14 +165,14 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Life" title="Life">Life</a>
+                          <a class="tag" href="/tags/#macOS" title="macOS">macOS</a>
                         
                     </div>
-                    <h1>Keep Moving On in 2018</h1>
-                    <h2 class="subheading">Happy New 🐶 Year!</h2>
+                    <h1>Installing phpMyAdmin on macOS</h1>
+                    <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by Cui Shuo on
-                        2018-02-16
+                        2018-09-06
                     </span>
                 </div>
             </div>
@@ -191,32 +191,33 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <blockquote>
-<p>2017年是生活翻天覆地变化的一年，无论是预期之中还是意料之外都经历了不少。</p>
-</blockquote>
-<ul>
-<li>找到了两个人，一个是孔老师，一个是自己。</li>
-<li>年初经历了一场不小的手术，变身「刀疤硕」，但是恢复的还算不错。</li>
-<li>寒假带着孔老师环游北京并且留下了许多美好的回忆🙈。</li>
-<li>努力让自己成为一个业余「家庭主夫」，发现自己在这方面很有潜力。</li>
-<li>无论是在学校还是在微博都结识了不少新的朋友。</li>
-<li>……</li>
+                <p>这几天一直在学 Spring MVC，正好需要前端和后端做简单交互。所以搭建了 Apache、PHP、MySQL、phpMyAdmin 这个配套环境。</p>
+<p>其实在 macOS 中已经自带了 Apache 和 PHP,可以在 Terminal 中看到如下信息。<br><img src="/2018/09/06/Installing-phpMyAdmin-on-macOS/pic-version.png" alt=""></p>
+<p>虽然 Apache 和 PHP 已经集成在系统中，但是我们必须要让 Apache 服务器支持 PHP 语言。</p>
+<h3 id="1-配置-Apache-服务器"><a href="#1-配置-Apache-服务器" class="headerlink" title="1.配置 Apache 服务器"></a>1.配置 Apache 服务器</h3><p>在 Terminal 中输入以下代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/apache2/httpd.conf</div></pre></td></tr></table></figure>
+<p>找到</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#LoadModule php7_module libexec/apache2/libphp7.so</span></div></pre></td></tr></table></figure>
+<p>把该行左侧的#号删除保存即可</p>
+<h3 id="2-安装-MySQL"><a href="#2-安装-MySQL" class="headerlink" title="2.安装 MySQL"></a>2.安装 MySQL</h3><p>由于 macOS 中没有集成 MySQL，需要自行下载。我这里使用 homebrew 进行安装，下载安装 homebrew 的方法在<a href="https://brew.sh" target="_blank" rel="external">这里</a></p>
+<p>如果已经安装了 homebrew，直接在 Terminal 中输入以下代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mysql</div></pre></td></tr></table></figure>
+<p>等待安装完成即可</p>
+<h3 id="3-安装-phpMyAdmin"><a href="#3-安装-phpMyAdmin" class="headerlink" title="3.安装 phpMyAdmin"></a>3.安装 phpMyAdmin</h3><ul>
+<li><p>首先从 <a href="https://www.phpmyadmin.net" target="_blank" rel="external">phpMyAdmin 官网</a>下载压缩包，解压缩后命名为 phpmyadmin 并放到 /Library/WebServer/Documents/ 目录下</p>
+</li>
+<li><p>复制 /Library/WebServer/Documents/phpmyadmin 中的 config.sample.inc.php，并命名为 config.inc.php，并放到当前文件夹下</p>
+</li>
+<li><p>编辑 config.inc.php，修改其中的<br>[‘host’] = ‘localhost’;<br>为<br>[‘host’] = ‘127.0.0.1’;<br>即可。如果想要无密码登陆，则将其中的下面语句中的false改成true<br>[‘AllowNoPassword’] = false </p>
+</li>
 </ul>
-<blockquote>
-<p>当然也有不少遗憾啦，比如：</p>
-</blockquote>
-<ul>
-<li>由于综合测评没过，导致自己与奖学金失之交臂。</li>
-<li>花钱如流水，没有攒下太多的钱。</li>
-<li>拖延症愈发严重，导致博客一直拖更（我会努力的啦）。</li>
-<li>没有抽出太多的时间和小伙伴们约饭。</li>
-<li>在学校学的JavaScript没有怎么看已经忘得差不多了。</li>
-<li>……</li>
-</ul>
-<p>2018年，我给自己定了一个小目标，希望可以迈出这万里长征的第一步。</p>
-<p>祝各位新年快乐。</p>
-<p><img src="/2018/02/16/Keep-Moving-On-in-2018/pic-selfie.jpg" alt=""></p>
-
+<p>登录 <a href="http://localhost/phpmyadmin" target="_blank" rel="external">http://localhost/phpmyadmin</a> 输入数据库用户名和密码，如果能成功进入说明环境已经配置成功。<br><img src="/2018/09/06/Installing-phpMyAdmin-on-macOS/pic-finish.png" alt=""></p>
+<h3 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h3><p>我在登录 phpMyAdmin 时，出现过错误提示</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">The<span class="built_in"> server </span>requested authentication method unknown <span class="keyword">to</span> the client</div></pre></td></tr></table></figure>
+<p>查阅一些相关的资料后发现是由于新版本的 MySQL 账号密码解锁机制不一致导致的</p>
+<p>解决方法如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -uroot -p</div></pre></td></tr></table></figure>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">USE</span> mysql;</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">WITH</span> mysql_native_password <span class="keyword">BY</span> <span class="string">'你的密码'</span>;</div></pre></td></tr></table></figure>
 
                 <hr>
 
@@ -224,13 +225,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2018/09/06/Installing-phpMyAdmin-on-macOS/" data-toggle="tooltip" data-placement="top" title="Installing phpMyAdmin on macOS">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2017/08/06/Installation-and-Configuration-of-oh-my-zsh-on-macOS/" data-toggle="tooltip" data-placement="top" title="Installation and Configuration of oh-my-zsh on macOS">Next Post &rarr;</a>
+                            <a href="/2018/02/16/Keep-Moving-On-in-2018/" data-toggle="tooltip" data-placement="top" title="Keep Moving On in 2018">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -257,7 +254,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Life" title="Life">Life</a>
+                          <a class="tag" href="/tags/#macOS" title="macOS">macOS</a>
                         
                     </div>
                 </section>
