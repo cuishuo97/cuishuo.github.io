@@ -204,16 +204,16 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mysql</div></pre></td></tr></table></figure>
 <p>等待安装完成即可</p>
 <h3 id="3-安装-phpMyAdmin"><a href="#3-安装-phpMyAdmin" class="headerlink" title="3.安装 phpMyAdmin"></a>3.安装 phpMyAdmin</h3><ul>
-<li><p>首先从 <a href="https://www.phpmyadmin.net" target="_blank" rel="external">phpMyAdmin 官网</a>下载压缩包，解压缩后命名为 phpmyadmin 并放到 /Library/WebServer/Documents/ 目录下</p>
+<li><p>首先从 <a href="https://www.phpmyadmin.net" target="_blank" rel="external">phpMyAdmin 官网</a>下载压缩包，解压缩后命名为 phpmyadmin 并放到 <code>/Library/WebServer/Documents/</code> 目录下</p>
 </li>
-<li><p>复制 /Library/WebServer/Documents/phpmyadmin 中的 config.sample.inc.php，并命名为 config.inc.php，并放到当前文件夹下</p>
+<li><p>复制 <code>/Library/WebServer/Documents/phpmyadmin</code> 中的 <code>config.sample.inc.php</code>，并命名为 <code>config.inc.php</code>，放到当前文件夹下</p>
 </li>
-<li><p>编辑 config.inc.php，修改其中的<br>[‘host’] = ‘localhost’;<br>为<br>[‘host’] = ‘127.0.0.1’;<br>即可。如果想要无密码登陆，则将其中的下面语句中的false改成true<br>[‘AllowNoPassword’] = false </p>
+<li><p>编辑 <code>config.inc.php</code>，修改其中的<br>[‘host’] = ‘localhost’;<br>为<br>[‘host’] = ‘127.0.0.1’;<br>即可。如果想要无密码登陆，则将其中的下面语句中的false改成true<br>[‘AllowNoPassword’] = false </p>
 </li>
 </ul>
 <p>登录 <a href="http://localhost/phpmyadmin" target="_blank" rel="external">http://localhost/phpmyadmin</a> 输入数据库用户名和密码，如果能成功进入说明环境已经配置成功。<br><img src="/2018/09/06/Installing-phpMyAdmin-on-macOS/pic-finish.png" alt=""></p>
 <h3 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h3><p>我在登录 phpMyAdmin 时，出现过错误提示</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">The<span class="built_in"> server </span>requested authentication method unknown <span class="keyword">to</span> the client</div></pre></td></tr></table></figure>
+<p><code>The server requested authentication method unknown to the client</code></p>
 <p>查阅一些相关的资料后发现是由于新版本的 MySQL 账号密码解锁机制不一致导致的</p>
 <p>解决方法如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -uroot -p</div></pre></td></tr></table></figure>
